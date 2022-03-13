@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <QGraphicsView>
+#include "graphwidget.h"
 
 struct ribs
 {
@@ -19,11 +20,11 @@ struct neededRibs
     int value;
 };
 
-bool ready;
+/*bool ready;
 QString result;
 QString result1;
 QString result2;
-QString result3;
+QString result3;*/
 
 void deikstra(std::vector<std::vector<int>> matrix, std::vector<std::vector<int>>& matrixD);
 void deikstra(std::vector<std::vector<int>> matrix, int matrixSize, std::pair<int,int>& topWithMax);

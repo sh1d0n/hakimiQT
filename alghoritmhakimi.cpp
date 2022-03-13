@@ -258,6 +258,12 @@ QString mainAlghoritm()
     std::vector<std::vector<int>> matrixD;
     int matrixSize = graph->GetNodes().size();
 
+    bool ready = false;
+    QString result;
+    QString result1;
+    QString result2;
+    QString result3;
+
     matrix.assign(matrixSize, std::vector<int>(matrixSize));
     matrixD.assign(matrixSize, std::vector<int>(matrixSize));
 
