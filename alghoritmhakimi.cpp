@@ -1,6 +1,7 @@
 #include "alghoritmhakimi.h"
 #include "graphwidget.h"
 #include "edge.h"
+#include "node.h"
 
 void deikstra(std::vector<std::vector<int>> matrix, std::vector<std::vector<int>>& matrixD)
 {
@@ -251,14 +252,12 @@ void fillNewMatrix(std::vector<std::vector<int>> matrix, std::vector<std::vector
     newMatrix[activeRib.secondTop][newMatrix.size() - 1] = 1;
 }
 
-QString mainAlghoritm()
+QString mainAlghoritm(GraphWidget* graph)
 {
-    GraphWidget* graph;
     std::vector<std::vector<int>> matrix;
     std::vector<std::vector<int>> matrixD;
     int matrixSize = graph->GetNodes().size();
 
-    bool ready = false;
     QString result;
     QString result1;
     QString result2;
@@ -311,7 +310,6 @@ QString mainAlghoritm()
     if(availableRibs.empty())
     {
         result = "The absolute center of the graph is at the apex - " + QString::number(upperBoundIndex + 1);
-        ready = false;
     }
     else
     {
@@ -321,7 +319,6 @@ QString mainAlghoritm()
             newMatrix.assign(matrixSize + matrix[availableRibs[i].firstTop][availableRibs[i].secondTop] - 1, std::vector<int>(matrixSize + matrix[availableRibs[i].firstTop][availableRibs[i].secondTop] - 1));
 
             fillNewMatrix(matrix, newMatrix, availableRibs[i]);
-            //find1(newMatrix);
             std::pair<int,int> topWithMax;
             deikstra(newMatrix, matrixSize, topWithMax);
             nRibs.push_back({availableRibs[i].firstTop, availableRibs[i].secondTop, topWithMax.first, topWithMax.second});
@@ -341,7 +338,6 @@ QString mainAlghoritm()
         result2 = "\r\nIn the distance = " + QString::number(nRibs[needTop].minTop - matrixSize + 1);
         result3 = "\r\nThe smallest distance to the farthest = " + QString::number(nRibs[needTop].value);
         result = result1 + result2 + result3;
-        ready = true;
     }
 
     return result;

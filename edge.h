@@ -20,8 +20,8 @@ public:
 
     QString edgeNodesText(){return ("(" + QString::number(nodes.first) + ";" + QString::number(nodes.second) + ")");}
 
-    int edgeNode1(){return nodes.first;}
-    int edgeNode2(){return nodes.second;}
+    int edgeNode1(){return nodes.first - 1;}
+    int edgeNode2(){return nodes.second - 1;}
 
     int GetWeight(){return edgeWeight;}
 

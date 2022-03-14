@@ -77,8 +77,9 @@ void Hakimi::on_comboBox_currentTextChanged(const QString &arg1)
 void Hakimi::on_startButton_clicked()
 {
     QString result;
-    result = mainAlghoritm();
+    result = mainAlghoritm(graph);
 
-    ui->resultLine->setText(result);
+    ui->resultText->setText(result);
 }
+
 

@@ -32,7 +32,7 @@ int findMaxMin(std::vector<std::vector<int>> matrixD, int& index);
 void findExistingRibs(std::vector<std::vector<int>> matrix, std::vector<ribs>& availableRibs, std::vector<std::vector<int>> matrixD);
 void findAvailableRibs(std::vector<ribs>& ribs, int upperBound);
 void fillNewMatrix(std::vector<std::vector<int>> matrix, std::vector<std::vector<int>>& newMatrix, ribs activeRib);
-QString mainAlghoritm();
+QString mainAlghoritm(GraphWidget* graph);
 
 /*bool GetReadyAlghoritm(){return ready;}
 QString GetResult(){return result;}

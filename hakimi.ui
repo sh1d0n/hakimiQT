@@ -170,7 +170,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QLineEdit" name="resultLine"/>
+       <widget class="QTextEdit" name="resultText"/>
       </item>
       <item>
        <spacer name="verticalSpacer">
